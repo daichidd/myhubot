@@ -5,25 +5,43 @@
 //	dosome
 
 const boobArr = [
-	'$B$$$C$Q$$!*(B',
-	'$B$*$C$Q$$!*(B',
-	'$B$b!<$_$?$$$J!<!*(B',
+	'いっぱい！',
+	'おっぱい！',
+	'もーみたいなー！',
+	'E capって巨乳なんですか？',
 ];
 
 const heppushiArr = [
-	'$B$s!)(B',	
-	'$B$"!)(B',
-	'$B$O!)(B',
-	'$B7Y;!8F$s$G$/$@$5$$(B',
-	'$B$R$C(B',
-	'$B$"$j$($J$$(B',
-	'$B$=$&$G$9$M(B',
-	'$B$"$j$($J$$!D!D(B',
-	'$B%;%/%O%i$G$9$h(B',
+	'ん？',	
+	'あ？',
+	'は？',
+	'警察読んでください',
+	'ひっ',
+	'ありえない……',
+	'セクハラですよ',
+	'そうですね',
+	'体脂肪率が、53万のようですね',
 ];
 
 module.exports = (robot => {
-	robot.hear(/aaa/i, res => {
+	robot.hear(/おっぱい/i, res => {
 		res.send(res.random(boobArr));
 	});
+
+	robot.respond(/見せ/i, res => {
+		res.send('まだ準備中だよ');
+	});
+
+	robot.respond(/おはよう/i, res => {
+		res.send('おはよう！');
+	});
+
+	robot.respond(/(.*)$/i, res => {
+		name = res.message.user.name.toLowerCase();
+		if (name == 'heppushi') {
+			res.send(res.random(heppushiArr));
+		}
+		return;
+	});
+
 });
