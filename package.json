@@ -21,5 +21,10 @@
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
